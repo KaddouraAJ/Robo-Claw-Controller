@@ -78,80 +78,79 @@ void loop(){
 
 /*rotate the base clockwise.*/
 void rotateBaseC() {
-  basePosition = base.read() - 10;
+  basePosition = base.read() - 10; //decrement angle by 10 degrees. 
   if(basePosition < 13){
     basePosition = 13;
   }
-  base.write(basePosition);
-  Serial.print(base.read());
+  base.write(basePosition); //Update angle
   delay(20);
 }
 
 /*Rotate the base counter clockwise*/
 void rotateBaseAC() {
-  basePosition = base.read() + 10;
-  base.write(basePosition);
+  basePosition = base.read() + 10; //Increment angle by 10 degrees. 
+  base.write(basePosition); //Update angle
   delay(20);
 }
 
 /*Moves the shoulder up*/
 void rotateShoulderU() {
-  shoulderPosition = shoulder.read() - 10;
-  if(shoulderPosition < 43){
+  shoulderPosition = shoulder.read() - 10; //decrement angle by 10 degrees. 
+  if(shoulderPosition < 43){ 
     shoulderPosition = 43;
   }
-  shoulder.write(shoulderPosition);
+  shoulder.write(shoulderPosition); //Update angle
   delay(20);
 }
 
 /*Moves the shoulder down*/
 void rotateShoulderD() {
-  shoulderPosition = shoulder.read() + 10;
+  shoulderPosition = shoulder.read() + 10; //Increment angle by 10 degrees.
   if(shoulderPosition > 150){
      shoulderPosition = 150;
   }
-  shoulder.write(shoulderPosition);
+  shoulder.write(shoulderPosition); //Update angle
   delay(20);
 }//rotate shoulder anti-clockwise.
 
 /*Moves the elbow up*/
 void rotateElbowU() {
-  elbowPosition = elbow.read() - 10;
+  elbowPosition = elbow.read() - 10; //decrement angle by 10 degrees. 
   if(elbowPosition < 53){
     elbowPosition = 53;
   }
-  elbow.write(elbowPosition);
+  elbow.write(elbowPosition); //Update angle
   delay(20);
 }//rotate elbow clockwise.
 
 /*Moves the elbow down*/
 void rotateElbowD() {
-  elbowPosition = elbow.read() + 10;
-  elbow.write(elbowPosition);
+  elbowPosition = elbow.read() + 10; //Increment angle by 10 degrees.
+  elbow.write(elbowPosition); //Update angle
   delay(20);
 }//rotate elbow anti-clockwise.
 
 /*Opens up the gripper*/
 void rotateGripperO() {
-  gripperPosition = gripper.read() - 10;
+  gripperPosition = gripper.read() - 10; //decrement angle by 10 degrees. 
   if(gripperPosition < 93){
     gripperPosition = 93;
   }
-  gripper.write(gripperPosition);
+  gripper.write(gripperPosition); //Update angle
   delay(20);
 }//gripper open.
 
 /*Closes the gripper*/
 void rotateGripperC() {
-  gripperPosition = gripper.read() + 10;
+  gripperPosition = gripper.read() + 10; //Increment angle by 10 degrees.
   if(gripperPosition > 123){
     gripperPosition = 125;
   }
-  gripper.write(gripperPosition);
+  gripper.write(gripperPosition); //Update angle
   delay(20);
 }//gripper close.
 
-/*Puts all the pieces to 90 degrees and detach them*/
+/*Puts all the servos to 90 degrees and detach them*/
 void stopServo(){
   base.write(pos);
   shoulder.write(pos);
